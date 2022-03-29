@@ -1,7 +1,6 @@
-// app.js
-
-const express = require('express');
-const connectDB = require('./config/db');
+const express = require("express");
+const cors = require("cors");
+const connectDB = require("./config/db");
 
 // routes
 const books = require("./routes/api/books");
@@ -11,12 +10,17 @@ const app = express();
 // Connect Database
 connectDB();
 
-app.get('/', (req, res) => res.send('Hello world!'));
+// cors
+app.use(cors({ origin: true, credentials: true }));
 
-app.get('/test', (req, res) => res.send('test!'));
+// Init Middleware
+app.use(express.json({ extended: false }));
 
 // API Routes
 app.use("/api/books", books);
+
+// Frontend build Route
+app.use(express.static("build"));
 
 const port = process.env.PORT || 8082;
 

@@ -19,11 +19,14 @@
   },
   "homepage": "https://github.com/catwrightb/CISE_Worksheet_3#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
     "config": "^3.3.7",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongoose": "^6.2.8",
+    "react-router-dom": "^6.2.2",
     "validation": "^0.0.1"
   },
   "devDependencies": {
